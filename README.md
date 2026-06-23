@@ -49,6 +49,15 @@ Open [http://localhost:3000](http://localhost:3000)
 | Styling | Tailwind CSS |
 | Icons | Lucide React |
 
+## 🚢 Production Features
+
+- **Docker** — Multi-stage build + docker-compose with PostgreSQL
+- **CI/CD** — GitHub Actions: lint → type-check → build
+- **Middleware** — Route protection for dashboard & API rate limits
+- **Env Validation** — Zod schema validates .env at startup
+- **Webhooks** — Stripe webhook handler for subscription lifecycle
+- **Seed** — `npm run db:seed` creates a demo user
+
 ## 🔧 Environment Variables
 
 See `.env.example` for all required variables:
