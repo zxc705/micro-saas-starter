@@ -7,18 +7,17 @@ on:
     branches: [master, main]
 
 jobs:
-  check:
+  build:
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: "file:./dev.db"
-      AUTH_SECRET: "ci-test-secret-do-not-use-in-prod"
+      AUTH_SECRET: "not-a-real-secret-for-ci-build-only"
+      NEXT_TELEMETRY_DISABLED: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - run: npm install
       - run: npx prisma generate
-      - run: npm run lint || true
       - run: npm run build
